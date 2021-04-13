@@ -1,0 +1,240 @@
+@font-face {
+    font-family: crazyfont;
+    src: url(font/SNOWBREAK3.ttf);
+}
+.empty {
+    height: 50px;
+    width: 100px;
+}
+
+
+.logo {
+    max-width: 60px;
+    max-width: 60px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-name {
+    font-size: 45px;
+    font-family: crazyFont;
+}
+
+.header span {
+    font-size: 45px;
+    font-family: crazyFont;
+}
+
+.ccc {
+	font-size: 25px;
+    font-family: crazyFont;
+}
+
+.menu span {
+    font-size: 20px;
+    font-family: crazyFont;
+    color: black;
+}
+
+.center-block {
+    display: flex;
+}
+
+.content {
+    flex: 1;
+}
+
+.page {
+    display: none;
+    flex-wrap: wrap;
+}
+
+.page:target {
+    display: flex;
+}
+
+.menu a {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    background: rgb(222, 245, 227);
+    text-transform: uppercase; 
+}
+
+.menu {
+    width: 70px;
+    border: 1px;
+    min-height: 500px;
+}
+
+.menu a {
+    width: 45px;
+}
+
+.menu .links:hover a {
+    width: 140px;
+}
+
+.links {
+    position: fixed;
+    width: 65px;
+    overflow: hidden;
+}
+
+.links:hover {
+    width: 160px;
+}
+
+.links .button span {
+    display: none;
+}
+
+.links:hover .button span {
+    display: block;;
+}
+
+.button {
+    text-decoration: none;
+}
+
+.button:hover {
+    background: coral;
+}
+
+.image {
+    margin: 5px;
+    border: 1px rgb(108, 247, 177) solid;
+    width: 400px;
+    height: 500px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.image .name {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px rgb(108, 247, 177) solid;
+    font-size: 20px;
+    font-family: crazyFont;
+}
+
+.image .preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+
+.image .buttons {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px rgb(108, 247, 177) solid;
+}
+
+.image .buttons .button {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    padding: 5px;
+    border-left: 1px rgb(108, 247, 177) solid;
+}
+
+.image .buttons .button:first-child {
+    border-bottom-left-radius: 15px;
+    border-left: 0;
+}
+
+.image .buttons .button:last-child {
+    border-bottom-right-radius: 15px;
+}
+
+.button {
+    border: 1px rgb(108, 247, 177) solid;
+    background: rgb(222, 245, 227);
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
+.go-up {
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    display: flex;
+    align-items: flex-end;
+}
+
+#gallery {
+    justify-content: flex-end;
+}
+
+#gallery .icon.up::before {
+    width: 120px;
+    height: 120px;
+}
+
+table {
+    text-align: center;
+}
+
+td {
+    border: 1px rgb(108, 247, 177) solid;
+}
+
+table tr:nth-child(2n+1){
+    background: lightblue;
+}
+
+table thead tr:first-child td {
+    font-weight: bold;
+}
+
+table tr:last-child td {
+    font-weight: bold;
+}
+
+table tr:hover {
+    background: coral;
+}
+
+#about-us > div {
+    width: 100%;
+}
+
+#about-us table{
+    width: 100%;
+}
+#footer{
+    padding:100px 0;
+    text-align: center;
+    background: rgb(222, 245, 227);
+	font-family: crazyFont;
+	font-weight: bold;
+	font-size: 20px;
+}
+

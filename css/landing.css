@@ -1,0 +1,102 @@
+@font-face {
+    font-family: crazyfont;
+    src: url(font/SNOWBREAK.ttf);
+}
+a{
+    text-decoration: none;
+}
+
+.photo {
+    font-size: 45px;
+    font-family: crazyfont;
+    height: 675px;
+    background: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.first {
+    background-image: url(../images/first.jpg);
+    display: flex;
+    background-size: cover;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.choose-info {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.photo a {
+    background: rgb(229, 240, 182);
+    padding: 10px;
+    border-radius: 30px;
+    
+}
+
+.photo a {
+    color: rgb(202, 221, 217);
+}
+
+.choose-info a {
+    color: rgb(13, 82, 59);
+}
+
+.second {
+    background-image: url(../images/second.jpg);
+    height: 675px;
+    background-size: cover;
+}
+
+.delimetr {
+    position: absolute;
+    margin-top: -15;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.delimetr span {
+    display: flex;
+    width: 150px;
+    height: 30px;
+    background: gray;
+    border-radius: 5px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.third {
+    background-image: url(../images/third.jpg);
+    height: 608px;
+    background-size: cover;
+}
+
+.arrows{
+	position: fixed;
+	height: 100vh;
+	top: 0;
+    display: flex;
+    align-items: flex-end;
+}
+
+.buttons{
+	display: flex;
+    flex-direction: column;
+    margin: 10px;
+	background: rgba(26, 204, 50, 0.699);
+    border-radius: 20px;
+    opacity: .3;
+}
+
+.buttons a{
+	margin: 5px;
+}
+
+.buttons img{
+	max-width: 50px;
+}

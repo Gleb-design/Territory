@@ -1,0 +1,56 @@
+.icon::before {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    content: ' ';
+}
+
+.icon.home::before {
+    background-image: url(../images/icon/tree.svg);
+}
+
+.icon.home:hover::before {
+    background-image: url(../images/icon/nighttree.svg);
+}
+
+.icon.about::before {
+    background-image: url(../images/icon/Astronaut.png);
+}
+
+.icon.about:hover::before {
+    background-image: url(../images/icon/SunSki.png);
+}
+
+.icon.gallery::before {
+    background-image: url(../images/icon/TV.png)
+}
+
+.icon.gallery:hover::before {
+    background-image: url(../images/icon/Icecream.png);
+}
+
+.icon.profile::before {
+    background-image: url(../images/icon/Submarine.png);
+}
+
+.icon.profile:hover::before {
+    background-image: url(../images/icon/Purse.png);
+}
+
+.icon.landing::before {
+    background-image: url(../images/icon/Bread.png);
+}
+
+.icon.landing:hover::before {
+    background-image: url(../images/icon/Bomb.png);
+}
+
+.icon.up::before{
+    background-image: url(../images/icon/StreetLights.png);
+}
+
+.icon.up:hover::before {
+    background-image: url(../images/icon/Spaceship.png);
+}

@@ -1,0 +1,701 @@
+<html>
+    <head>
+        <title>
+            Сайт для экзамена>
+        </title>
+        <link rel='stylesheet' href='css/reset.css' />
+        <link rel='stylesheet' href='css/icon.css' />
+        <link rel='stylesheet' href='css/style.css?time=42' />
+		<link rel="stylesheet" href="css/video.css?time=8" />
+    </head>
+    <body>
+        <div class='header'>
+            <img class='logo' src='images/logo.jpg' />
+            <span>
+                <span  class='icon home'></span>
+                Forest is a treasure of nature
+            </span>
+			<h1 class='ccc' id='main-heading'>Hello, World!</h1>
+			<script src='https://code.jquery.com/jquery-3.5.1.js'></script>
+			<script>
+				var newHeadingText = prompt('Как тебя зовут?');
+				$('#main-heading').text('Привет ' + newHeadingText + '. Найди сокровища!');
+			</script>
+            <div></div>
+        </div>
+        <div class='empty'></div>
+        <div class='center-block'>
+            <div class='menu' id='menu'>
+                <div class='links'>
+                    <a href='#' class='button icon home'>
+                        <span>Main</span>
+                    </a>
+                    <a href='#about-us' class='button icon about'>
+                        <span>About us</span>
+                    </a>
+                    <a href='#gallery' class='button icon gallery'>
+                        <span>Gallery</span>
+                    </a>
+                    <a href='#profile' class='button icon profile'>
+                        <span>Profile</span>
+                    </a>
+                    <a href='landingpage.html' class='button icon landing' target='_blank'>
+                        <span>Landing</span>
+                    </a>
+                </div>
+            </div>
+			<!-- start player -->
+		<section id="player">
+		<video id="media" width="720px" height="400px">
+		 <source src='images/123.mp4' />
+		 <track src="file.vtt" />
+		</video>
+		<nav>
+		 <div id="buttons">
+		  <input type="button" id="play" value="Play" />
+		  <input type="button" id="mute" value="Mute" />
+		 </div>
+		 <div id="bar">
+		  <div id="progress"></div>
+		 </div>
+		 <div id="control">
+		  <input type="range" id="volume" min=0 max=1 step="0.1" value="0.6">
+		 </div>
+		 <div class="clear"></div>
+		</nav>
+		</section>
+		<!-- end player -->
+		<div>
+			<img id="map" width=400 heigth=400 src="images/map1.jpg">
+
+			<p id="distance"></p>
+		</div>
+			<script>
+// Получить случайное число от 0 до size-1
+var getRandomNumber = function(size) {
+return Math.floor(Math.random() * size); };
+
+//Вычислить расстояние от клика(event) до клада(target)
+var getDistance = function(event, target) {
+var diffX = event.offsetX - target.x;
+var diffY = event.offsetY - target.y;
+return Math.sqrt((diffX * diffX) + (diffY * diffY));};
+
+//Получить для расстояния строку подсказки
+var getDistanceHint = function(distance) {
+if (distance<10) {
+return "Обожжешься!"}
+else if (distance<20) {
+return "Очень горячо"; }
+else if (distance<40) {
+return "Горячо"; }
+else if (distance<80) {
+return "Тепло"; }
+else if (distance<160) {
+return "Холодно"; }
+else if (distance<320) {
+return "Очень холодно"; }
+else {
+return "Замерзнешь";}
+};
+
+//Создаем переменные
+var width = 400;
+var heigth = 400;
+var clicks = 0;
+var lifes = 100;
+
+//Случайная позиция клада
+var target = {
+x: getRandomNumber(width),
+y: getRandomNumber(heigth)
+};
+
+//Добавляем элементу img обработчик клика
+$("#map").click(function(event) {
+clicks++;
+lifes--;
+
+//Получаем расстояние от места клика до клада
+var distance = getDistance(event, target);
+
+//Преобразуем расстояние в подсказку
+var distanceHint = getDistanceHint(distance);
+
+//Записываем в элемент #distance новую подсказку
+$("#distance").text(distanceHint);
+
+//Если клик был сделан достаточно близко, поздравляем с победой
+if (distance<8) {
+alert("Клад найден! Сделано кликов: " + clicks);}
+
+//Ограничение по количеству кликов
+else if (lifes<1) {
+alert("Игра окончена");
+}
+
+else if (distanceHint==="Холодно") {
+console.log("Осталось кликов " +lifes);}
+});
+
+</script>
+		<script src = "https://code.jquery.com/jquery-3.5.1.js"></script>
+		
+            <div class='content'>
+                
+                
+                <div class='page' id='gallery'>
+                    <div class='image-container'>
+                        <div class='image' id='image1'>
+                            <div class='name'>
+                                territory#1
+                            </div>
+                            <div class='preview'>
+                                <div class='column'>
+                                    <img src='images/t1.jpg' />
+                                    <img src='images/t1_1.jpg' />
+                                </div>
+                                
+                            </div>
+                            <div class='buttons'>
+                                <a href='#' class='button'>b#1</a>
+                                <a href='#' class='button'>b#2</a>
+                            </div>
+                        </div>
+                        <div class='image' id='image2'>
+                            <div class='name'>
+                                territory#2
+                            </div>
+                            <div class='preview'>
+                                <img src='images/t2.jpg' />
+                            </div>
+                            <div class='buttons'>
+                                <a href='#' class='button'>b#1</a>
+                                <a href='#' class='button'>b#2</a>
+                            </div>
+                        </div>
+                        <div class='image' id='image1'>
+                            <div class='name'>
+                                territory#3
+                            </div>
+                            <div class='preview'>
+                                <div class='column'>
+                                    <img src='images/t3.jpg' />
+                                    <img src='images/t3_1.jpg' />
+                                </div>
+                            </div>
+                            <div class='buttons'>
+                                <a href='#' class='button'>b#1</a>
+                                <a href='#' class='button'>b#2</a>
+                                <a href='#' class='button'>b#3</a>
+                                <a href='#' class='button'>b#4</a>
+                                <a href='#' class='button'>b#5</a>
+                            </div>
+                        </div>
+                        <div class='image' id='image1'>
+                            <div class='name'>
+                                territory#4
+                            </div>
+                            <div class='preview'>
+                                <img src='images/t4.jpg' />
+                            </div>
+                            <div class='buttons'>
+                                <a href='#' class='button'>b#1</a>
+                                <a href='#' class='button'>b#2</a>
+                                <a href='#' class='button'>b#3</a>
+                            </div>
+                        </div>
+						<div class='page' id='up'></div>
+                        <div class='image' id='image1'>
+                            <div class='name'>
+                                territory#5
+                            </div>
+                            <div class='preview'>
+                                <div class='column'>
+                                    <img src='images/t5.jpg' />
+                                    <img src='images/t5_1.jpg' />
+                                </div>
+                            </div>
+                            <div class='buttons'>
+                                <a href='#' class='button'>b#1</a>
+                                <a href='#' class='button'>b#2</a>
+                            </div>
+                        </div>
+                        <div class='image' id='image1'>
+                            <div class='name'>
+                                territory#6
+                            </div>
+                            <div class='preview'>
+                                <div class='column'>
+                                    <img src='images/t6.jpg' />
+                                    <img src='images/t6_1.jpg' />
+                                </div>
+                            </div>
+                            <div class='buttons'>
+                                <a href='#' class='button'>b#1</a>
+                                <a href='#' class='button'>b#2</a>
+                            </div>
+                        </div>
+                        <div class='image' id='image1'>
+                            <div class='name'>
+                                territory#7
+                            </div>
+                            <div class='preview'>
+                                <div class='flex'>
+                                    <img src='images/t7.jpg' />
+								</div>
+								<div class='flex'>
+                                    <img src='images/t7_1.jpg' />
+                                </div>
+                            </div>
+                            <div class='buttons'>
+                                <a href='#' class='button'>b#1</a>
+                                <a href='#' class='button'>b#2</a>
+                            </div>
+                        </div>
+                        <div class='image' id='image1'>
+                            <div class='name'>
+                                territory#8
+                            </div>
+                            <div class='preview'>
+                                <div class='flex'>
+                                    <img src='images/t8.jpg' />
+								</div>
+								<div class='flex'>
+                                    <img src='images/t8_1.jpg' />
+                                </div>
+                            </div>
+                            <div class='buttons'>
+                                <a href='#' class='button'>b#1</a>
+                                <a href='#' class='button'>b#2</a>
+                            </div>
+                        </div>
+                        <div class='image' id='image1'>
+                            <div class='name'>
+                                territory#9
+                            </div>
+                            <div class='preview'>
+                                <div class='flex'>
+                                    <img src='images/t9.jpg' />
+								</div>
+								<div class='flex'>
+                                    <img src='images/t9_1.jpg' />
+                                </div>
+                            </div>
+                            <div class='buttons'>
+                                <a href='#' class='button'>b#1</a>
+                                <a href='#' class='button'>b#2</a>
+                            </div>
+                        </div>
+					</div>
+					<div class='go-up'>
+						<a class='icon up' href='#gallery'></a>
+					</div>
+				</div>
+				<div class='page' id='about-us'>
+                    <div>
+                        Таблица 
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>
+                                        Номер
+                                    </td>
+                                    <td>
+                                        Имя
+                                    </td>
+                                    <td>
+                                        Стаж
+                                    </td>
+                                    <td>
+                                        Магия
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        1
+                                    </td>
+                                    <td>
+                                        Иван
+                                    </td>
+                                    <td>
+                                        50
+                                    </td>
+                                    <td>
+                                        Белая
+                                    </td>
+                                </tr>
+                                <tr>
+									<td>
+										2
+									</td>
+									<td>
+										Мария
+									</td>
+									<td>
+										10
+									</td>
+									<td>
+										Красная
+									</td>
+								</tr>
+								<tr>
+									<td>
+										3
+									</td>
+									<td>
+										Коля
+									</td>
+									<td>
+										4
+									</td>
+									<td>
+										Синяя
+									</td>
+								</tr>
+								<tr>
+									<td>
+										4
+									</td>
+									<td>
+										Мавр
+									</td>
+									<td>
+										134
+									</td>
+									<td>
+										Коричневая
+									</td>
+								</tr>
+								<tr>
+									<td>
+										5
+									</td>
+									<td>
+										Ира
+									</td>
+									<td>
+										5
+									</td>
+									<td>
+										Черная
+									</td>
+								</tr>
+								<tr>
+									<td>
+										6
+									</td>
+									<td>
+										Люда
+									</td>
+									<td>
+										101
+									</td>
+									<td>
+										Зеленая
+									</td>
+								</tr>
+								<tr>
+									<td>
+										7
+									</td>
+									<td>
+										Виталий
+									</td>
+									<td>
+										64
+									</td>
+									<td>
+										Оранжевая
+									</td>
+								</tr>
+								<tr>
+									<td>
+										8
+									</td>
+									<td>
+										Гном
+									</td>
+									<td>
+										14
+									</td>
+									<td>
+										Лиловая
+									</td>
+								</tr>
+								<tr>
+									<td>
+										9
+									</td>
+									<td>
+										Петр
+									</td>
+									<td>
+										54
+									</td>
+									<td>
+										Фиолетавая
+									</td>
+								</tr>
+								<tr>
+									<td>
+										10
+									</td>
+									<td>
+										Вадим
+									</td>
+									<td>
+										746
+									</td>
+									<td>
+										Голубая
+									</td>
+								</tr>
+								<tr>
+									<td>
+										11
+									</td>
+									<td>
+										Слава
+									</td>
+									<td>
+										71
+									</td>
+									<td>
+										Янтарная
+									</td>
+								</tr>
+								<tr>
+									<td>
+										12
+									</td>
+									<td>
+										Дуся
+									</td>
+									<td>
+										49
+									</td>
+									<td>
+										Мраморная
+									</td>
+								</tr>
+								<tr>
+									<td>
+										13
+									</td>
+									<td>
+										Леша
+									</td>
+									<td>
+										42
+									</td>
+									<td>
+										Огненная
+									</td>
+								</tr>
+								<tr>
+									<td>
+										14
+									</td>
+									<td>
+										Вася
+									</td>
+									<td>
+										61
+									</td>
+									<td>
+										Темная
+									</td>
+								</tr>
+								<tr>
+									<td>
+										15
+									</td>
+									<td>
+										Инокентий
+									</td>
+									<td>
+										50
+									</td>
+									<td>
+										Белая
+									</td>
+								</tr>
+								<tr>
+									<td>
+										16
+									</td>
+									<td>
+										Яна
+									</td>
+									<td>
+										654
+									</td>
+									<td>
+										Мутная
+									</td>
+								</tr>
+								<tr>
+									<td>
+										17
+									</td>
+									<td>
+										Оля
+									</td>
+									<td>
+										54
+									</td>
+									<td>
+										Серая
+									</td>
+								</tr>
+								<tr>
+									<td>
+										18
+									</td>
+									<td>
+										Тая
+									</td>
+									<td>
+										93
+									</td>
+									<td>
+										Красная
+									</td>
+								</tr>
+								<tr>
+									<td>
+										19
+									</td>
+									<td>
+										Андрей
+									</td>
+									<td>
+										83
+									</td>
+									<td>
+										Бежевая
+									</td>
+								</tr>
+								<tr>
+									<td>
+										20
+									</td>
+									<td>
+										Мира
+									</td>
+									<td>
+										59
+									</td>
+									<td>
+										Бурая
+									</td>
+								</tr>
+								<tr>
+									<td>
+										21
+									</td>
+									<td>
+										Стефа
+									</td>
+									<td>
+										43
+									</td>
+									<td>
+										Бекиная
+									</td>
+								</tr>
+								<tr>
+									<td>
+										22
+									</td>
+									<td>
+										Масяня
+									</td>
+									<td>
+										167
+									</td>
+									<td>
+										Коридорная
+									</td>
+								</tr>
+								<tr>
+									<td>
+										23
+									</td>
+									<td>
+										Бубик
+									</td>
+									<td>
+										87
+									</td>
+									<td>
+										Седая
+									</td>
+								</tr>
+								<tr>
+									<td>
+										24
+									</td>
+									<td>
+										Прикол
+									</td>
+									<td>
+										76
+									</td>
+									<td>
+										Приятная
+									</td>
+								</tr>
+								<tr>
+									<td>
+										152
+									</td>
+									<td>
+										---
+									</td>
+									<td>
+										15
+									</td>
+									<td>
+										***
+									</td>
+								</tr>
+                            </tbody>
+                        </table>
+                    </div>
+				</div>
+				<div class='page' id='profile'>
+                    <div>
+                        <div class='user-name'>
+                            MAGIC Forest hahahah
+                        </div>
+                        <div>
+                            <img src='images/logo.jpg'>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div id="footer">
+        xpomovm@gmail.com &copy; 2021
+		<p><a href="#top" id="top">Top</a></p>
+		</div>
+		<script src="media/js/jquery-3.5.1.min.js?url=5"></script> 
+		<script src="media/bootstrap/js/bootstrap.min.js"></script> 
+		<script src="media/js/main.js"></script>
+		<script src="media/js/player.js?url=6"></script>
+		<script>  
+		 let body = document.querySelector('body');
+		 let my_a = document.querySelector('#top');
+			my_a.addEventListener('click', function(elem){
+			 elem.preventDefault();  
+			 console.log(body.offsetTop, body.offsetLeft);
+			 window.scroll({top:body.offsetTop,left:body.offsetLeft});
+		 });  
+		</script>
+		
+    </body>
+</html>

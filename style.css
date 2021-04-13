@@ -1,0 +1,8 @@
+p {
+    color: lightcoral;
+}
+.wrapper {
+    border: 10px;
+    display: flex;
+    justify-content: end;
+}
